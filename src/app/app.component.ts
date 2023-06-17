@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { AuthService } from './shared/auth.service';
 import { NavigationEnd, Router } from '@angular/router';
 import { AssignmentsService } from './shared/assignments.service';
@@ -8,7 +8,7 @@ import { AssignmentsService } from './shared/assignments.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Application de gestion de devoirs à rendre';
   labelConnexion = "Se connecter";
   nom:string = "";
@@ -25,14 +25,12 @@ export class AppComponent {
         this.currentRoute = event.url;
       }
     });
-    
-    
   }
 
   login() {
     // utilise l'authService pour se connecter
     if(!this.authService.loggedIn) {
-      this.authService.logIn();
+      //this.authService.logIn();
       // on change le label du bouton
       this.labelConnexion = "Se déconnecter";
     } else {
@@ -40,15 +38,26 @@ export class AppComponent {
       // et on navigue vers la page d'accueil
       this.router.navigate(["/home"]);
     }
+    
   }
 
   isLogged() {
     if(this.authService.loggedIn) {
-      this.nom = "Michel Buffa";
+      this.nom = "user name";
     }
     return this.authService.loggedIn;
   }
 
+  ngOnInit(){
+    if(this.isLogged() === false){
+      this.router.navigate(["/login"]);
+    }
+
+    if(this.isLogged() === true){
+      this.router.navigate(["/home"]);
+    }
+
+  }
   creerDonneesDeTest() {
     this.assigmmentsService.peuplerBDavecForkJoin()
     .subscribe(() => {
