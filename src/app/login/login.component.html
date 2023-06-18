@@ -1,1 +1,36 @@
-<p>ICI FORMULAIRE DE CONNEXION</p>
+<div class="login">
+    <div class="top-bar">
+        <h1 class="assigmenent">ASSIGNEMENT</h1>
+        <span>Note</span>  
+    </div>
+
+    <div class="login-container">
+        <div class="nothing"></div>
+        <div class="intro">
+            <div class="intro-container">
+                <h1>Welcome<br>back.</h1>
+                <p>Application de gestion de  <br> devoirs à rendre</p>    
+            </div>
+        </div>
+
+        <form (submit)="onSubmit()" class="form-login">
+            <h1>Connectez-vous maintenant</h1>  
+            <hr>
+            <div class="input-group">
+                <label for="email" placeholder="Votre adresse email">Email ou Identifiant</label>
+                <input type="text" placeholder="Votre email ou identifiant" >
+            </div>
+            <div class="input-group">
+                <label for="mdp">Mot de passe</label>
+                <input type="password" placeholder="Votre mot de passe" >
+            </div>
+
+            <button 
+                type="submit"
+                class="btn-black"
+            >
+                Se connecter
+            </button>
+        </form>
+    </div>
+</div>

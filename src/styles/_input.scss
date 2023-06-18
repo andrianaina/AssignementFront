@@ -1,0 +1,32 @@
+@mixin input-group($direction) {
+    font-size: 15px;
+    display: flex;
+    flex-direction: $direction;
+    margin: 15px 0px 15px 0px;
+    width: 100%;
+
+    label {
+        margin-bottom: 8px;
+    }
+
+    input {
+        height: 35px;
+        border: solid 1px #d4d4d4;
+        border-radius: 7px;
+        padding-left: 8px;
+    }
+
+    input:focus {
+        outline: none;
+    }
+}
+
+
+@mixin btn-black {
+    width: 100%;
+    height: 30px;
+    background-color: #1E1E1E;
+    color: white;
+    border: none;
+    border-radius: 7px;
+}

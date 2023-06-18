@@ -1,0 +1,16 @@
+@mixin btn-black {
+    width: 100%;
+    margin-top: 20px;
+    height: 40px;
+    border: none;
+    background-color: $text-color;
+    color: white;
+    border-radius: 7px;
+}
+
+
+@mixin btn-black-hover {
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 1px 1px 5px 2px #9b9b9b;
+}

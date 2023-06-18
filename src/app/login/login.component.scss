@@ -1,0 +1,115 @@
+@import '../../styles/flex';
+@import '../../styles/placeholder'; 
+@import '../../styles//input';
+@import '../../styles/btn';
+
+$height-top-navbar: 60px;
+$login-font-size: 15px;
+
+.login {
+    @include flex(column, center, center);
+}
+
+.top-bar {
+    @include flex(column, center, center);
+    height: $height-top-navbar;
+    
+    span {
+        @include flex(row, center, center);
+        font-size: 7px;
+        background-image: linear-gradient(to right, $color-red-fonce, $color-red-clair);
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+        height: 10px;
+    }
+}
+
+
+
+.login-container {
+    @include flex(row, space-around, center);
+    width: 100vw;
+    height: calc(100vh - $height-top-navbar);
+    background-image: linear-gradient(to right, transparent 40%, white), url('./../../assets/login_image.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    .nothing {
+    width: 30vw;
+}
+
+
+
+.form-login {
+    width: 25vw;
+    height: 100%;
+    @include flex(column, center, flex-start);
+
+    hr {
+        border: solid rgb(190, 190, 190) 1px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2vw;
+        margin-bottom: 20px;
+        font-weight: 800;
+    }
+
+    .input-group {
+        @include input-group(column);
+        font-size: $login-font-size;
+    }
+
+    .btn-black {
+        @include btn-black;
+        margin-top: 30px;
+    }
+
+    .btn-black:hover {
+        cursor: pointer;
+    }
+
+}
+
+
+.remember-mdp {
+    /* @include flex(row, space-between, center); */
+    display: none;
+    font-size: $login-font-size;
+    width: 100%;
+
+    .remember {
+        @include flex(row, center, center);
+        input[type=checkbox] {
+            margin-right: 8px;
+        }
+
+        input[type=checkbox]:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+
+.intro {
+    @include flex(row, flex-end, flex-end); 
+
+    .intro-container {
+        h1 {
+            font-size: 70px;
+            margin-bottom: 30px;
+            font-weight: 900;
+        }
+    
+        p {
+            font-size: 17px;
+            font-weight: 700;
+        }
+    }
+}
+}
+
+

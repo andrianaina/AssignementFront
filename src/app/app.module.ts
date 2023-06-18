@@ -29,7 +29,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { EditAssignmentComponent } from './assignments/edit-assignment/edit-assignment.component';
 import { authGuard } from './shared/auth.guard';
-import { LoginComponent } from './login/login.component';  
+import { LoginComponent } from './login/login.component';
+import { LeftbarComponent } from './leftbar/leftbar.component';  
 
 const routes: Routes = [
   {
@@ -66,7 +67,8 @@ const routes: Routes = [
     AssignmentDetailComponent,
     AddAssignmentComponent,
     EditAssignmentComponent,
-    LoginComponent
+    LoginComponent,
+    LeftbarComponent
   ],
   imports: [
     BrowserModule,

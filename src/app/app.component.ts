@@ -6,7 +6,7 @@ import { AssignmentsService } from './shared/assignments.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'Application de gestion de devoirs à rendre';

@@ -1,0 +1,8 @@
+<div class="left-bar">
+    <ng-container *ngFor="let menu of menus">
+        <a *ngIf="menu.show" [routerLink]="[menu.link]" [routerLinkActive]="'active'">
+            <!-- <img [src]="menu.icon" [alt]="menu.title"> -->
+            <span>{{menu.title}}</span>
+        </a>
+    </ng-container>
+</div>
