@@ -14,11 +14,13 @@ export class AuthService {
   // un token d'authentification JWT etc.
   // elle devrait renvoyer un Observable etc.
   logIn() {
+    console.log("ON SE LOGGE")
     this.loggedIn = true;
   }
 
   logOut() {
     console.log("ON SE DELOGGE")
+
     this.loggedIn = false;
   }
 
