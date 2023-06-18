@@ -1,34 +1,18 @@
-<div class="panel-container">
-    <app-leftbar />
+<div class="panel-container" *ngIf="currentRoute !== '/login'; else login">
     
-    <div class="container">
-        <h1>
-            <nav>
-                <a routerLink="/home">{{title}}</a>
-            </nav>
-        </h1>
-        <p>
-            <button mat-raised-button color="primary" (click)="creerDonneesDeTest()">
-                Peupler BD avec données de test
-            </button>
-        </p>
-        
-        <div *ngIf="currentRoute !== '/login'">
-            <p>Route courante : {{currentRoute}}</p>
-            <nav>
-                <a routerLink="/login">
-                    <button mat-raised-button (click)="login()">{{labelConnexion}}</button>
-                </a>
-            </nav>
-            <p *ngIf="isLogged()">Vous êtes connecté en tant que {{nom}}</p>
-        </div>
-        
+    <app-leftbar />
+    <div class="container" >
+        <router-outlet ></router-outlet>
         <!-- Indique que le composant affiché sera celui
-             correspondant à l'URL courant
+            correspondant à l'URL courant
         -->
-        <router-outlet></router-outlet>
+    
     </div>
+    
+    
 </div>
 
-
+<ng-template #login>
+    <router-outlet></router-outlet>
+</ng-template>
 

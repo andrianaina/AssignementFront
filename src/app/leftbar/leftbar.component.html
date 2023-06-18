@@ -5,4 +5,12 @@
             <span>{{menu.title}}</span>
         </a>
     </ng-container>
+    <ng-container>
+        <a (click)="creerDonneesDeTest()">
+            Peupler BD avec données de test
+        </a>
+        <a  (click)="login()" routerLink="/login">
+            {{getLabelConnexion()}}
+        </a>
+    </ng-container>
 </div>

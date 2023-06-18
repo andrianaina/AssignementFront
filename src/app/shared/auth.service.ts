@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   loggedIn = false;
 
-  constructor() { }
+  constructor(private localS: LocalStorageService) { }
 
   // théoriquement, on devrait passer en paramètre le login
   // et le password, cette méthode devrait faire une requête
@@ -19,8 +20,7 @@ export class AuthService {
   }
 
   logOut() {
-    console.log("ON SE DELOGGE")
-
+    this.localS.removeItem('myuser');
     this.loggedIn = false;
   }
 

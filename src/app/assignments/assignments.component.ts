@@ -42,7 +42,9 @@ export class AssignmentsComponent implements OnInit {
 
     this.getAssignments();
   }
-
+  onclick(id : number){
+    alert(id);
+  }
   ngAfterViewInit() { 
     console.log("after view init");
 

@@ -9,7 +9,10 @@
         <div class="intro">
             <div class="intro-container">
                 <h1>Welcome<br>back.</h1>
-                <p>Application de gestion de  <br> devoirs à rendre</p>    
+                <p>Application de gestion de  <br> devoirs à rendre</p>   
+                <h5>
+                    <a routerLink="/home">revenir vers l'accueil</a>
+                </h5> 
             </div>
         </div>
 
@@ -18,12 +21,14 @@
             <hr>
             <div class="input-group">
                 <label for="email" placeholder="Votre adresse email">Email ou Identifiant</label>
-                <input type="text" placeholder="Votre email ou identifiant" >
+                <input type="text" placeholder="Votre email ou identifiant" name='user' [(ngModel)]="user">
             </div>
             <div class="input-group">
                 <label for="mdp">Mot de passe</label>
-                <input type="password" placeholder="Votre mot de passe" >
+                <input type="password" placeholder="Votre mot de passe" name='pwd' [(ngModel)]="pwd">
             </div>
+            
+            
 
             <button 
                 type="submit"
@@ -31,6 +36,7 @@
             >
                 Se connecter
             </button>
+            
         </form>
     </div>
 </div>
