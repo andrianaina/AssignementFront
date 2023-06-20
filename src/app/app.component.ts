@@ -30,9 +30,9 @@ export class AppComponent {
   
 
   isLogged() {
-    if(this.authService.loggedIn) {
+    if(this.authService.isLoggedIn()) {
       this.nom = "Michel Buffa";
     }
-    return this.authService.loggedIn;
+    return this.authService .isLoggedIn();
   }
 }

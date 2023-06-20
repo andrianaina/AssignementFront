@@ -5,8 +5,6 @@ import { LocalStorageService } from './local-storage.service';
   providedIn: 'root'
 })
 export class AuthService {
-  loggedIn = false;
-
   constructor(private localS: LocalStorageService) { }
 
   // théoriquement, on devrait passer en paramètre le login
@@ -14,14 +12,15 @@ export class AuthService {
   // vers un Web Service pour vérifier que c'est ok, renvoyer
   // un token d'authentification JWT etc.
   // elle devrait renvoyer un Observable etc.
-  logIn() {
-    console.log("ON SE LOGGE")
-    this.loggedIn = true;
+  // logIn() {
+  //   this.loggedIn = this.localS.isLoggedIn();
+  // }
+  isLoggedIn(){
+    return this.localS.isLoggedIn();
   }
 
   logOut() {
     this.localS.removeItem('myuser');
-    this.loggedIn = false;
   }
 
   // si on l'utilisait on ferai isAdmin().then(...)
@@ -29,7 +28,7 @@ export class AuthService {
     // Pour le moment, version simplifiée...
     // on suppose qu'on est admin si on est loggué
     const isUserAdminPromise = new Promise((resolve, reject) => {
-        resolve(this.loggedIn);
+      resolve(this.localS.isLoggedIn());
     });
 
     // on renvoie la promesse qui dit si on est admin ou pas
