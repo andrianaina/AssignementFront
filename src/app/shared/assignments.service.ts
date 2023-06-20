@@ -117,6 +117,10 @@ assignments:Assignment[] = []
       newAssignment.nom = a.nom;
       newAssignment.dateDeRendu = new Date(a.dateDeRendu);
       newAssignment.rendu = a.rendu;
+      newAssignment.auteur = a.auteur;
+      newAssignment.matiere = a.matiere;
+      newAssignment.note = a.note??0;
+      newAssignment.remarques = a.remarques??"";
 
       this.addAssignment(newAssignment)
       .subscribe((reponse) => {

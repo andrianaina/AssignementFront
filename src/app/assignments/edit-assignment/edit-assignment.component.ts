@@ -50,7 +50,7 @@ export class EditAssignmentComponent implements OnInit {
     this.dateDeRendu = assignment.dateDeRendu;
     this.auteurAssignment = assignment.auteur;
     this.noteAssignment = assignment.note;
-    this.remarqueAssignment = assignment.remarque;
+    this.remarqueAssignment = assignment.remarques;
 
   });
 }
@@ -62,7 +62,7 @@ onSaveAssignment() {
   this.assignment.dateDeRendu = this.dateDeRendu;
   this.assignment.auteur = this.auteurAssignment;
   this.assignment.note = this.noteAssignment;
-  this.assignment.remarque = this.remarqueAssignment;
+  this.assignment.remarques = this.remarqueAssignment;
   this.assignmentsService
     .updateAssignment(this.assignment)
     .subscribe((message) => {
