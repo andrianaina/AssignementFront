@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/shared/auth.service';
 })
 export class AssignmentDetailComponent implements OnInit {
   assignmentTransmis?: Assignment;
-
+  imageSrc: string = 'assets/login_image.jpg';
   constructor(private assignmentsService: AssignmentsService,
     private route: ActivatedRoute,
     private router: Router,
@@ -67,7 +67,7 @@ export class AssignmentDetailComponent implements OnInit {
     // path = "/assignment/" + this.assignmentTransmis?.id + "/edit";
     // this.router.navigate([path]);
     // c'est pour vous montrer la syntaxe avec [...]
-    this.router.navigate(["/assignments", this.assignmentTransmis?.id, "edit"],
+    this.router.navigate(["assignments/"+this.assignmentTransmis?.id+"/edit"],
     {
       queryParams: {
         nom: this.assignmentTransmis?.nom,
@@ -75,10 +75,16 @@ export class AssignmentDetailComponent implements OnInit {
       },
       fragment: "edition"
     });
+
+    /*if (!this.assignmentTransmis) return;
+
+  // Navigation vers le composant d'édition en passant l'ID de l'assignment
+  this.router.navigate(['/edit-assignment', this.assignmentTransmis.id]);*/
   }
 
   isLogged() {
     // renvoie si on est loggé ou pas
-    return this.authService.isLoggedIn();
+    //return this.authService.loggedIn;
+    return null;
   }
 }
