@@ -33,7 +33,7 @@ assignments:Assignment[] = []
     // Plus tard on utilisera un Web Service et une BD
     return this.http.get<Assignment|undefined>(`${this.uri_api}/${id}`)
    
-    .pipe(
+    /*.pipe(
       map(a => {
         if(a) {
           a.nom += " MAP MAP MAP";
@@ -51,7 +51,7 @@ assignments:Assignment[] = []
         return a;
       }),
       catchError(this.handleError<Assignment>("Erreur dans le traitement de assignment avec id = " + id))
-    )
+    )*/
     
     // On va chercher dans le tableau des assignments
     // l'assignment dont l'id est celui passé en paramètre
@@ -119,8 +119,8 @@ assignments:Assignment[] = []
       newAssignment.rendu = a.rendu;
       newAssignment.auteur = a.auteur;
       newAssignment.matiere = a.matiere;
-      newAssignment.note = a.note??0;
-      newAssignment.remarques = a.remarques??"";
+      newAssignment.note = a.note;
+      newAssignment.remarques = a.remarques;
 
       this.addAssignment(newAssignment)
       .subscribe((reponse) => {
@@ -141,6 +141,10 @@ assignments:Assignment[] = []
       nouvelAssignment.nom = a.nom;
       nouvelAssignment.dateDeRendu = new Date(a.dateDeRendu);
       nouvelAssignment.rendu = a.rendu;
+      nouvelAssignment.auteur = a.auteur;
+      nouvelAssignment.matiere = a.matiere;
+      nouvelAssignment.note = a.note;
+      nouvelAssignment.remarques = a.remarques;
  
       appelsVersAddAssignment.push(this.addAssignment(nouvelAssignment))
     });
