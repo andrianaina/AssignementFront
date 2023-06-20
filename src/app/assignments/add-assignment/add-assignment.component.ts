@@ -13,7 +13,11 @@ export class AddAssignmentComponent {
   // champs du formulaire
   nomDevoir = "";
   dateDeRendu!: Date;
-
+  auteur = "";
+  matiere = "";
+  note = 0;
+  remarques = " ";
+  
 
   constructor(private assignmentsService: AssignmentsService,
               private router:Router) { }
@@ -29,6 +33,10 @@ export class AddAssignmentComponent {
     nouvelAssignment.nom = this.nomDevoir;
     nouvelAssignment.dateDeRendu = this.dateDeRendu;
     nouvelAssignment.rendu = false;
+    nouvelAssignment.auteur = this.auteur;
+    nouvelAssignment.matiere =this.matiere;
+    nouvelAssignment.note =this.note;
+    nouvelAssignment.remarques =this.remarques;
 
     // on demande au service d'ajouter l'assignment
     this.assignmentsService.addAssignment(nouvelAssignment)

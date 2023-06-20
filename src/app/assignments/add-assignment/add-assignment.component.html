@@ -12,6 +12,23 @@
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
+    <mat-form-field>
+        <input matInput [(ngModel)]="auteur" name="auteur" placeholder="Auteur" required>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [(ngModel)]="matiere" name="matiere" placeholder="Matiere" required>
+    </mat-form-field>
+
+
+    <mat-form-field>
+        <input matInput [(ngModel)]="note" name="note" placeholder="Note" required>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [(ngModel)]="remarques" name="remarques" placeholder="Remarque" required>
+    </mat-form-field>
+
     <button mat-stroked-button color="primary">
         Ajouter un devoir
     </button>
