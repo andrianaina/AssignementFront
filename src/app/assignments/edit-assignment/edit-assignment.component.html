@@ -10,6 +10,15 @@
         </mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Edition d'auteur" [(ngModel)]="auteurAssignment" name="assignment-auteur">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Note" [(ngModel)]="noteAssignment" name="assignment-note">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Remarque" [(ngModel)]="remarqueAssignment" name="assignment-remarque">
+      </mat-form-field>
       <button mat-raised-button color="primary" [disabled]="((!nomAssignment)||(!dateDeRendu))">
         Sauver
       </button>
