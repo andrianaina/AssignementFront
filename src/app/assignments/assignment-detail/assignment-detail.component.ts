@@ -11,7 +11,8 @@ import { AuthService } from 'src/app/shared/auth.service';
 })
 export class AssignmentDetailComponent implements OnInit {
   assignmentTransmis?: Assignment;
-  imageSrc: string = 'assets/login_image.jpg';
+  imageSrc: string = 'assets/prof.jpg';
+  imageSr: string = 'assets/matiere.jpg';
   constructor(private assignmentsService: AssignmentsService,
     private route: ActivatedRoute,
     private router: Router,
